@@ -1,6 +1,6 @@
 "use client"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, PerspectiveCamera, Environment, Stars, PerformanceMonitor } from "@react-three/drei"
+import { PerspectiveCamera, Environment, PerformanceMonitor } from "@react-three/drei"
 import { Suspense, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"

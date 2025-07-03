@@ -30,7 +30,7 @@ About Me
                 />
               </div>
               <p className="mb-4">
-                I'm a passionate developer with expertise in creating interactive web experiences and 3D visualizations.
+                I&apos;m a passionate developer with expertise in creating interactive web experiences and 3D visualizations.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Python</span>

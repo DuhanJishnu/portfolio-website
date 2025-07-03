@@ -1,19 +1,16 @@
 "use client"
-import { useRef, useState, useMemo } from "react"
-import { useFrame, useThree } from "@react-three/fiber"
+import { useRef, useMemo } from "react"
+import { useFrame } from "@react-three/fiber"
 import {
-  Text,
   Float,
   MeshDistortMaterial,
   MeshWobbleMaterial,
   Sphere,
-  Box,
-  Torus,
   RoundedBox,
   Environment,
   useTexture,
 } from "@react-three/drei"
-import { Vector3, type Mesh, type Group, Color } from "three"
+import { type Mesh, type Group, Color, Vector3 } from "three"
 import { useMouse } from "@/hooks/use-mouse"
 import { useTheme } from "next-themes"
 
@@ -25,7 +22,7 @@ export function InteractiveScene() {
 
   // Create particles
 const particles = useMemo(() => {
-  return Array.from({ length: 50 }).map((_, i) => ({
+  return Array.from({ length: 50 }).map(() => ({
     position: [
       (Math.random() - 0.5) * 10,
       (Math.random() - 0.5) * 10,
@@ -37,7 +34,7 @@ const particles = useMemo(() => {
   }));
 }, []);
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (groupRef.current) {
       // Subtle movement following the mouse
       const targetX = mouse.x * 0.5 - 0.25
@@ -52,7 +49,9 @@ const particles = useMemo(() => {
   })
 
   // Sphere texture
-  const earthTexture = isDarkMode ? useTexture("/sphere1.jpg") : useTexture("/sphere2.jpg");
+  const earthTexture1 = useTexture("/sphere1.jpg");
+  const earthTexture2 = useTexture("/sphere2.jpg");
+  const earthTexture = isDarkMode ? earthTexture1 : earthTexture2;
   
   return (
     <>
@@ -106,38 +105,7 @@ const particles = useMemo(() => {
   )
 }
 
-function Cube({ position = [0, 0, 0], color = "#ffffff" }: { position?: [number, number, number] | Vector3; color?: string }) {
-  const meshRef = useRef<Mesh>(null);
-  const [hovered, setHovered] = useState(false);
 
-  const posVector = Array.isArray(position) ? new Vector3(...position) : position;
-
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.2;
-      meshRef.current.rotation.y += delta * 0.3;
-
-      if (hovered) {
-        meshRef.current.scale.lerp(new Vector3(1.2, 1.2, 1.2), 0.1);
-      } else {
-        meshRef.current.scale.lerp(new Vector3(1, 1, 1), 0.1);
-      }
-    }
-  });
-
-  return (
-    <mesh
-      ref={meshRef}
-      position={posVector}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      castShadow
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "#ffffff" : color} roughness={0.3} metalness={0.7} />
-    </mesh>
-  )
-}
 
 interface ParticlePointProps {
   position: [number, number, number]; // Explicitly define as a tuple
