@@ -5,7 +5,7 @@ import Hero from "@/components/hero"
 import Projects from "@/components/projects"
 import About from "@/components/about"
 import { Loader } from "@/components/Loader"
-// import SkillsSphere from "@/components/3d-skills-sphere"
+import SkillsSphere from "@/components/3d-skills-sphere"
 
 export default function Home() {
   return (
@@ -20,12 +20,12 @@ export default function Home() {
           <Hero />
         </Suspense>
 
-        {/* <div className="my-16 w-screen h-[500px]"> {/* Added fixed height */}
-          {/* <h2 className="text-4xl font-bold mb-8 text-center">My Skills</h2>
+        <div className="my-16 w-screen h-[500px]"> {/* Added fixed height */}
+          <h2 className="text-4xl font-bold mb-8 text-center">My Skills</h2>
           <Suspense fallback={<Loader />}>
             <SkillsSphere />
           </Suspense>
-        </div> */}
+        </div>
 
         <div className="project-container flex flex-col items-center justify-center mb-16 w-screen"> 
           <Projects />

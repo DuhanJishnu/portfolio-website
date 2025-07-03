@@ -2,12 +2,16 @@
 
 import { useRef, useMemo, useEffect, useState, Suspense } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Text, Html, OrbitControls, useProgress } from "@react-three/drei"
+import { Text, OrbitControls, Line } from "@react-three/drei"
 import { Vector3 } from "three"
 import type { Group } from "three"
 import { useTheme } from "next-themes"
 
 const skills = [
+  "Generative AI",
+  "LLM",
+  "LangChain",
+  "Python",
   "React",
   "Three.js",
   "TypeScript",
@@ -30,17 +34,6 @@ const skills = [
   "CI/CD",
 ]
 
-function Loader() {
-  const { progress } = useProgress()
-  return (
-    <Html center>
-      <div className="text-center text-foreground">
-        Loading skills... {Math.round(progress)}%
-      </div>
-    </Html>
-  )
-}
-
 export default function SkillsSphere() {
   const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -56,13 +49,12 @@ export default function SkillsSphere() {
   return (
     <div className="h-[500px] w-full relative">
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 30], fov: 55, near: 0.1, far: 1000 }}>
-        <Suspense fallback={<Loader />}>
-          <color attach="background" args={[isDarkMode ? "#1e1e2e" : "#f8fafc"]} />
-          <fog attach="fog" args={[isDarkMode ? "#1e1e2e" : "#f8fafc", 10, 40]} />
+        <Suspense fallback={null}>
+
           <ambientLight intensity={1} />
           <pointLight position={[10, 10, 10]} intensity={1} />
           <SkillsCloud isDarkMode={isDarkMode} />
-          <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
+          <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} enableDamping dampingFactor={0.1} enableRotate={true} />
         </Suspense>
       </Canvas>
     </div>
@@ -71,11 +63,11 @@ export default function SkillsSphere() {
 
 function SkillsCloud({ isDarkMode }: { isDarkMode: boolean }) {
   const groupRef = useRef<Group>(null)
-  const fontUrl = "https://drei.pmnd.rs/fonts/helvetiker_regular.typeface.json"
+  
 
   const points = useMemo(() => {
     const temp: Vector3[] = []
-    const sphereRadius = 10 // Reduced from 12 to make sure it's visible
+    const sphereRadius = 11 // Reduced from 12 to make sure it's visible
     const samples = skills.length
     const phi = Math.PI * (3 - Math.sqrt(5))
 
@@ -112,17 +104,24 @@ function SkillsCloud({ isDarkMode }: { isDarkMode: boolean }) {
           color={isDarkMode ? "#ffffff" : "#000000"}
           anchorX="center"
           anchorY="middle"
-          font={fontUrl}
         >
           {skills[i]}
         </Text>
       ))}
-      
-      {/* Sphere with better visibility settings */}
-      <mesh position={[0, 0, 0]}>
-        <sphereGeometry args={[8, 32, 32]} /> {/* Reduced size */}
-        <meshStandardMaterial color={isDarkMode ? "white" : "black"} wireframe />
-      </mesh>
+      {points.map((p1, i) =>
+        points.map((p2, j) =>
+          i < j ? ( // Only draw each line once
+            <Line
+              key={`${i}-${j}`}
+              points={[p1.toArray(), p2.toArray()]}
+              color={isDarkMode ? "#555555" : "#aaaaaa"} // Dull white color
+              lineWidth={0.5}
+              transparent
+              opacity={0.3}
+            />
+          ) : null
+        )
+      )}
     </group>
   )
 }

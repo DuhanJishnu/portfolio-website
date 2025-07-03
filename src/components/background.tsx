@@ -8,7 +8,7 @@ export default function Background() {
         <div className="fixed inset-0 z-0">
             <Canvas>
                 <Suspense fallback={null}>
-                    <Stars radius={100} depth={50} count={7000} factor={6} saturation={0} fade speed={0.5} />
+                    <Stars radius={100} depth={50} count={2000} factor={6} saturation={0} fade speed={0.5} />
                     <Environment preset="night" />
                 </Suspense>
                 <OrbitControls
