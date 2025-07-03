@@ -33,6 +33,10 @@ About Me
                 I'm a passionate developer with expertise in creating interactive web experiences and 3D visualizations.
               </p>
               <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Python</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Generative AI</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">LLM</span>
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">LangChain</span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React</span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Three.js</span>
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Next.js</span>
@@ -66,12 +70,13 @@ About Me
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <SkillBar label="Generative AI" value={90} />
+                    <SkillBar label="LLM" value={85} />
+                    <SkillBar label="LangChain" value={80} />
                     <SkillBar label="Frontend Development" value={90} />
                     <SkillBar label="3D Graphics (Three.js)" value={85} />
                     <SkillBar label="UI/UX Design" value={80} />
                     <SkillBar label="Backend Development" value={75} />
-                    <SkillBar label="Mobile Development" value={65} />
-                    <SkillBar label="DevOps" value={60} />
                   </div>
                 </CardContent>
               </Card>
@@ -85,22 +90,16 @@ About Me
                 <CardContent>
                   <div className="space-y-6">
                     <ExperienceItem
-                      title="Senior Frontend Developer"
-                      company="Tech Innovations Inc."
-                      period="2021 - Present"
-                      description="Leading the frontend team in developing interactive web applications with React and Three.js."
+                      title="Web Development Intern"
+                      company="ONLYBEES"
+                      period="Feb - Mar, 2025"
+                      description="Delivered a Ticketing Platform for the Asian Football Confederation (AFC), enhancing functionality and ensuring seamless user experiences for large-scale event operations. Recognized with a Certificate of Appreciation for technical expertise and commitment, directly supporting the platform’s successful deployment and adoption across AFC’s 2025 events."
                     />
                     <ExperienceItem
-                      title="Web Developer"
-                      company="Digital Solutions Ltd."
-                      period="2018 - 2021"
-                      description="Developed responsive websites and web applications for various clients."
-                    />
-                    <ExperienceItem
-                      title="Junior Developer"
-                      company="StartUp Studio"
-                      period="2016 - 2018"
-                      description="Worked on frontend development and UI design for early-stage startups."
+                      title="Co-Coordinator"
+                      company="Web Development Team, Shishir"
+                      period="Jan, 2025 - Present"
+                      description="Led the front-end of the official website for Shishir, the cultural fest of NIT Meghalaya, using Next.js and Tailwind CSS for a modern, responsive UI. Designed and integrated reusable UI components, maintaining a scalable and maintainable codebase."
                     />
                   </div>
                 </CardContent>
@@ -115,23 +114,12 @@ About Me
                 <CardContent>
                   <div className="space-y-6">
                     <ExperienceItem
-                      title="MSc in Computer Science"
-                      company="University of Technology"
-                      period="2014 - 2016"
-                      description="Specialized in Interactive Media and Computer Graphics."
+                      title="B. Tech Computer Science and Engineering"
+                      company="National Institute of Technology Meghalaya"
+                      period="2023 – Present"
+                      description="CGPA: 9.99"
                     />
-                    <ExperienceItem
-                      title="BSc in Software Engineering"
-                      company="State University"
-                      period="2010 - 2014"
-                      description="Graduated with honors. Focus on web technologies and software architecture."
-                    />
-                    <ExperienceItem
-                      title="Certifications"
-                      company="Various"
-                      period="2016 - Present"
-                      description="AWS Certified Developer, Google Cloud Professional, React Advanced Certification."
-                    />
+                    <div className="italic">Relevant Coursework : Object-Oriented Programming (OOP), Advanced Engineering Maths, Data Structures</div>
                   </div>
                 </CardContent>
               </Card>

@@ -1,5 +1,6 @@
+import Background from "@/components/background"
 import { Suspense } from "react"
-import { ModeToggle } from "@/components/mode-toggle"
+
 import Hero from "@/components/hero"
 import Projects from "@/components/projects"
 import About from "@/components/about"
@@ -9,9 +10,10 @@ import { Loader } from "@/components/Loader"
 export default function Home() {
   return (
     <main className="h-screen bg-background text-foreground w-screen overflow-x-hidden">
+      <Background />
       <div className="container pt-2">
         <header className="fixed top-0 right-0 z-20 p-4 bg-transparent">
-          <ModeToggle />
+          
         </header>
 
         <Suspense fallback={<Loader />}>
