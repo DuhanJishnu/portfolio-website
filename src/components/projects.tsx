@@ -67,8 +67,8 @@ export default function Projects() {
     : projectsData
 
   return (
-    <section id="projects" className="p-16">
-      <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
+    <section id="projects">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">My Projects</h2>
 
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         <Badge

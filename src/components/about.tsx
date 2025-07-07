@@ -7,10 +7,10 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <section id="about" className="p-16">
+    <section id="about">
       <h2 className="text-4xl font-bold mb-8 text-center text-primary">
-About Me
-</h2>
+        About Me
+      </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1">
@@ -22,7 +22,7 @@ About Me
             <CardContent>
               <div className="aspect-square rounded-full overflow-hidden mb-6">
                 <Image
-                  src = "/profile_img.jpg"
+                  src="/profile_img.jpg"
                   alt="Profile"
                   width={300}
                   height={300}
@@ -48,17 +48,17 @@ About Me
 
         <div className="lg:col-span-2">
           <Tabs defaultValue="skills">
-            <TabsList className="grid grid-cols-3 mb-6">
+            <TabsList className="grid grid-cols-3 mb-6 mx-auto md:mx-0">
               <TabsTrigger value="skills" className="cursor-pointer">
-                <Code className=" mr-2 h-4 w-4" />
+                <Code className="mr-2 h-4 w-4 hidden md:inline" />
                 Skills
               </TabsTrigger>
               <TabsTrigger value="experience" className="cursor-pointer">
-                <Briefcase className="mr-2 h-4 w-4" />
+                <Briefcase className="mr-2 h-4 w-4 hidden md:inline" />
                 Experience
               </TabsTrigger>
               <TabsTrigger value="education" className="cursor-pointer">
-                <GraduationCap className="mr-2 h-4 w-4" />
+                <GraduationCap className="mr-2 h-4 w-4 hidden md:inline" />
                 Education
               </TabsTrigger>
             </TabsList>
@@ -70,13 +70,12 @@ About Me
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <SkillBar label="Generative AI" value={90} />
-                    <SkillBar label="LLM" value={85} />
-                    <SkillBar label="LangChain" value={80} />
-                    <SkillBar label="Frontend Development" value={90} />
-                    <SkillBar label="3D Graphics (Three.js)" value={85} />
-                    <SkillBar label="UI/UX Design" value={80} />
-                    <SkillBar label="Backend Development" value={75} />
+                    <SkillBar label="Generative AI" value={60} />
+                    <SkillBar label="LLM" value={55} />
+                    <SkillBar label="LangChain" value={60} />
+                    <SkillBar label="Frontend Development" value={70} />
+                    <SkillBar label="UI/UX Design" value={50} />
+                    <SkillBar label="Backend Development" value={65} />
                   </div>
                 </CardContent>
               </Card>
@@ -159,8 +158,8 @@ function ExperienceItem({
   return (
     <div className="border-l-2 border-primary pl-4 py-1">
       <h4 className="text-lg font-semibold">{title}</h4>
-      <div className="flex justify-between text-sm text-muted-foreground mb-2">
-        <span>{company}</span>
+      <div className="flex flex-col sm:flex-row sm:justify-between text-sm text-muted-foreground mb-2">
+        <span className="mb-1 sm:mb-0">{company}</span>
         <span>{period}</span>
       </div>
       <p className="text-sm">{description}</p>

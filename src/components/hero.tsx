@@ -18,7 +18,7 @@ export default function Hero() {
     }
 
     return (
-        <section className="relative h-screen w-screen mb-16">
+        <section className="relative h-screen w-full mb-16">
             <div className="earth absolute inset-0 z-0">
                 <Canvas dpr={dpr} shadows>
                     <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={50} />
