@@ -19,6 +19,15 @@ type Project = {
 
 const projectsData: Project[] = [
   {
+    id: 0,
+    title: "ShakespeareGPT",
+    description: "Nano-Shakespeare-GPT is a simplified, character-level (GPT) implemented from scratch in PyTorch",
+    image: "/project-0.png",
+    tags: ["Transformers", "Embedding", "PyTorch", "Python"],
+    demoUrl: "https://github.com/DuhanJishnu/ShakespeareGPT.git",
+    githubUrl: "https://github.com/DuhanJishnu/ShakespeareGPT.git",
+  },
+  {
     id: 1,
     title: "Music Recommender",
     description: "A personalized music recommendation system utilizing NLP, vectorization, and Streamlit.",
