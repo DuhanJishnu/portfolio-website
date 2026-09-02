@@ -5,7 +5,7 @@ import About from "@/components/about"
 import { Loader } from "@/components/Loader"
 import InterfaceEffects from "@/components/interface-effects"
 
-const capabilities = ["GENERATIVE AI", "LANGUAGE MODELS", "RAG SYSTEMS", "CREATIVE CODE", "THREE.JS", "PRODUCT ENGINEERING"]
+const capabilities = ["GENERATIVE AI", "LANGUAGE MODELS", "RAG SYSTEMS", "CREATIVE CODE", "THREE.JS", "PYTHON"]
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <Projects />
 
       <section className="capability-section" aria-labelledby="capability-heading">
-        <div className="capability-intro"><span>Capabilities / 04</span><h2 id="capability-heading">From raw idea<br />to <em>living system.</em></h2></div>
+        <div className="capability-intro"><span>Capabilities</span><h2 id="capability-heading">From raw idea<br />to <em>living system.</em></h2></div>
         <div className="capability-stack">
           <article><span>01</span><h3>AI Engineering</h3><p>LLMs, RAG pipelines, recommendation engines, and useful interfaces for intelligent systems.</p></article>
           <article><span>02</span><h3>Creative Development</h3><p>Immersive browser experiences shaped with Three.js, React, motion, and generative visuals.</p></article>
@@ -36,8 +36,8 @@ export default function Home() {
       <footer className="contact-section" id="contact">
         <div className="contact-kicker"><span className="status-dot" /> Have a strange, ambitious idea?</div>
         <h2>Let&apos;s make it<br /><em>impossible to ignore.</em></h2>
-        <a className="contact-link" href="https://github.com/DuhanJishnu" target="_blank" rel="noreferrer">Start a conversation <span>↗</span></a>
-        <div className="footer-row"><span>Jishnu Duhan © 2026</span><div><a href="https://github.com/DuhanJishnu" target="_blank" rel="noreferrer">GitHub</a><a href="#home">Back to top ↑</a></div></div>
+        <a className="contact-link" href="https://www.linkedin.com/in/jishnu-duhan-b23ee006/" target="_blank" rel="noreferrer">Start a conversation <span>↗</span></a>
+        <div className="footer-row"><span>Jishnu Duhan © 2026</span><a href="#home">Back to top ↑</a></div>
       </footer>
     </main>
   )

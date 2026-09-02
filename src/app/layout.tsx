@@ -2,7 +2,7 @@ import type React from "react"
 import "@/app/globals.css"
 
 export const metadata = {
-  title: "Jishnu Duhan — AI Engineer & Creative Developer",
+  title: "Jishnu Duhan | Portfolio",
   description: "Portfolio of Jishnu Duhan, an AI engineer and creative developer building intelligent products and immersive digital experiences.",
 }
 

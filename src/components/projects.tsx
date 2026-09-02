@@ -68,7 +68,7 @@ const projects: Project[] = [
   },
   {
     number: "06",
-    title: "ShakespeareGPT",
+    title: "Shakespeare GPT",
     kicker: "A language model, from first principles",
     description: "A character-level GPT built from scratch in PyTorch—an exploration of attention, embeddings, and the machinery behind generative language.",
     tags: ["Transformers", "PyTorch", "Research"],
@@ -165,9 +165,7 @@ export default function Projects() {
         <span className="project-index-total">/{String(projects.length).padStart(2, "0")}</span>
       </nav>
       <header className="section-heading">
-        <div><span className="section-number">02</span><span className="section-kicker">Seven things I have made</span></div>
-        <h2 id="projects-heading">Proof, not<br /><em>promises.</em></h2>
-        <p>Every project gets its own visual language because the ideas inside them are not interchangeable.</p>
+        <h2 id="projects-heading">My <br></br><em>Projects.</em></h2>
       </header>
 
       <div className="project-list">
